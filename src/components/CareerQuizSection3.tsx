@@ -13,62 +13,62 @@ interface Question {
 const questions: Question[] = [
   {
     id: 11,
-    text: "You most enjoy learning about:",
+    text: "What do you enjoy learning about most? (Topics that interest you naturally)",
     options: [
-      { value: "A", label: "How things work", domain: "TC" },
-      { value: "B", label: "What drives success", domain: "BM" },
-      { value: "C", label: "Ways to improve wellbeing", domain: "HS" },
-      { value: "D", label: "New creative techniques", domain: "CD" },
-      { value: "E", label: "Building better solutions", domain: "ED" },
-      { value: "F", label: "Why people make choices", domain: "MC" }
+      { value: "A", label: "How things work - understanding machines, computers, technology", domain: "TC" },
+      { value: "B", label: "What makes businesses successful - money, growth, strategy", domain: "BM" },
+      { value: "C", label: "Ways to improve people's health and make them feel better", domain: "HS" },
+      { value: "D", label: "New creative techniques - art, design, new ways to create", domain: "CD" },
+      { value: "E", label: "Building better solutions - engineering, construction, systems", domain: "ED" },
+      { value: "F", label: "Why people make choices - psychology, marketing, behavior", domain: "MC" }
     ]
   },
   {
     id: 12,
-    text: "When reading for work, you prefer:",
+    text: "When reading for work or study, what do you prefer? (Your favorite type of reading material)",
     options: [
-      { value: "A", label: "Code documentation and developer guides", domain: "TC" },
-      { value: "B", label: "Financial reports and industry news", domain: "BM" },
-      { value: "C", label: "Patient care studies and protocols", domain: "HS" },
-      { value: "D", label: "Design portfolios and style guides", domain: "CD" },
-      { value: "E", label: "System specifications and manuals", domain: "ED" },
-      { value: "F", label: "Consumer data and market research", domain: "MC" }
+      { value: "A", label: "Computer manuals and programming guides", domain: "TC" },
+      { value: "B", label: "Business reports and news about companies making money", domain: "BM" },
+      { value: "C", label: "Medical studies and patient care instructions", domain: "HS" },
+      { value: "D", label: "Design books and style guides with beautiful pictures", domain: "CD" },
+      { value: "E", label: "Technical manuals and step-by-step instructions", domain: "ED" },
+      { value: "F", label: "Consumer research and marketing trend reports", domain: "MC" }
     ]
   },
   {
     id: 13,
-    text: "You're most likely to take courses in:",
+    text: "What courses would you most likely choose to study? (Your preferred learning topics)",
     options: [
-      { value: "A", label: "Software development and code languages", domain: "TC" },
-      { value: "B", label: "Financial modeling and business administration", domain: "BM" },
-      { value: "C", label: "Clinical management", domain: "HS" },
-      { value: "D", label: "User experience and design thinking", domain: "CD" },
-      { value: "E", label: "Structure design and systems architecture", domain: "ED" },
-      { value: "F", label: "Campaign design and digital strategy", domain: "MC" }
+      { value: "A", label: "Computer programming and software development", domain: "TC" },
+      { value: "B", label: "Business studies and financial management", domain: "BM" },
+      { value: "C", label: "Clinical management and patient care", domain: "HS" },
+      { value: "D", label: "User experience design and creative thinking", domain: "CD" },
+      { value: "E", label: "Engineering design and systems architecture", domain: "ED" },
+      { value: "F", label: "Marketing campaigns and digital strategy", domain: "MC" }
     ]
   },
   {
     id: 14,
-    text: "Your internet browsing often includes:",
+    text: "When browsing the internet, what do you often look at? (Your natural browsing interests)",
     options: [
-      { value: "A", label: "Code libraries and dev forums", domain: "TC" },
-      { value: "B", label: "Investment trends", domain: "BM" },
-      { value: "C", label: "Healthcare discoveries and research", domain: "HS" },
-      { value: "D", label: "Creative inspiration galleries", domain: "CD" },
-      { value: "E", label: "New technologies and inventions", domain: "ED" },
-      { value: "F", label: "Marketing trends and social data", domain: "MC" }
+      { value: "A", label: "Programming websites and developer forums", domain: "TC" },
+      { value: "B", label: "Investment news and business trends", domain: "BM" },
+      { value: "C", label: "Healthcare discoveries and medical research", domain: "HS" },
+      { value: "D", label: "Creative inspiration galleries and design websites", domain: "CD" },
+      { value: "E", label: "New technologies and engineering inventions", domain: "ED" },
+      { value: "F", label: "Marketing trends and social media data", domain: "MC" }
     ]
   },
   {
     id: 15,
-    text: "In work discussions, you focus on:",
+    text: "In work discussions, what do you usually focus on? (What captures your attention in meetings)",
     options: [
-      { value: "A", label: "System improvements and efficiencies", domain: "TC" },
-      { value: "B", label: "Business opportunities and strategies", domain: "BM" },
-      { value: "C", label: "Patient experience and outcomes", domain: "HS" },
-      { value: "D", label: "Creative concepts and solutions", domain: "CD" },
-      { value: "E", label: "Project challenges and approaches", domain: "ED" },
-      { value: "F", label: "Audience engagement and impact", domain: "MC" }
+      { value: "A", label: "System improvements and making things work more efficiently", domain: "TC" },
+      { value: "B", label: "Business opportunities and ways to make more money", domain: "BM" },
+      { value: "C", label: "Patient experience and making people feel better", domain: "HS" },
+      { value: "D", label: "Creative concepts and new innovative solutions", domain: "CD" },
+      { value: "E", label: "Project challenges and technical approaches to solve them", domain: "ED" },
+      { value: "F", label: "Audience engagement and how to influence people", domain: "MC" }
     ]
   }
 ];
@@ -92,12 +92,14 @@ export default function CareerQuizSection3({ onNext, onBack }: CareerQuizSection
 
   const handleNext = () => {
     if (allQuestionsAnswered && onNext) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       onNext(answers);
     }
   };
 
   const handleBack = () => {
     if (onBack) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       onBack();
     }
   };
@@ -182,8 +184,8 @@ export default function CareerQuizSection3({ onNext, onBack }: CareerQuizSection
       {/* Instructions */}
       <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
         <p className="text-sm text-blue-800">
-          <strong>Section 3 Focus:</strong> These questions explore your learning interests and knowledge preferences. 
-          Choose the options that align with what genuinely excites and motivates you to learn and engage.
+          <strong>About this section:</strong> These questions are about what you like to learn and what interests you. 
+          Choose the options that match what you genuinely enjoy reading about or learning about.
         </p>
       </div>
     </div>

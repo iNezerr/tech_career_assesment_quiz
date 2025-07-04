@@ -13,62 +13,62 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    text: "Your ideal work environment is one where:",
+    text: "Where do you like to work best? (Think about the place that makes you feel comfortable and productive)",
     options: [
-      { value: "A", label: "Quiet focused spaces", domain: "TC" },
-      { value: "B", label: "Strategy rooms and boardrooms", domain: "BM" },
-      { value: "C", label: "Care-centered facilities", domain: "HS" },
-      { value: "D", label: "Open creative studios", domain: "CD" },
-      { value: "E", label: "Hands-on technical workspaces", domain: "ED" },
-      { value: "F", label: "Team collaboration hubs", domain: "MC" }
+      { value: "A", label: "Quiet places where I can focus alone", domain: "TC" },
+      { value: "B", label: "Meeting rooms where important decisions are made", domain: "BM" },
+      { value: "C", label: "Hospitals or clinics helping sick people", domain: "HS" },
+      { value: "D", label: "Creative spaces where I can design and create", domain: "CD" },
+      { value: "E", label: "Workshop or lab where I can build things", domain: "ED" },
+      { value: "F", label: "Open offices where I work with many people", domain: "MC" }
     ]
   },
   {
     id: 2,
-    text: "When solving problems, you prefer to:",
+    text: "When you have a problem, how do you like to solve it? (Choose your natural way of fixing things)",
     options: [
-      { value: "A", label: "Take things apart to find the source of the problem", domain: "TC" },
-      { value: "B", label: "Look at the numbers and track down patterns", domain: "BM" },
+      { value: "A", label: "Break it down step by step to find what's wrong", domain: "TC" },
+      { value: "B", label: "Look at numbers and data to understand patterns", domain: "BM" },
       { value: "C", label: "Talk to people to understand what they need", domain: "HS" },
-      { value: "D", label: "Draw out or map different possible solutions", domain: "CD" },
-      { value: "E", label: "Start small and test each piece of the solution", domain: "ED" },
-      { value: "F", label: "Gather feedback to find the best approach", domain: "MC" }
+      { value: "D", label: "Draw or sketch different ideas to solve it", domain: "CD" },
+      { value: "E", label: "Start with small tests and build up the solution", domain: "ED" },
+      { value: "F", label: "Ask others for their opinions and ideas", domain: "MC" }
     ]
   },
   {
     id: 3,
-    text: "You're most energized when:",
+    text: "What kind of work makes you feel most excited and energetic? (Think about what motivates you)",
     options: [
-      { value: "A", label: "Working through complex code", domain: "TC" },
-      { value: "B", label: "Optimizing business performance", domain: "BM" },
-      { value: "C", label: "Improving patient outcomes", domain: "HS" },
-      { value: "D", label: "Exploring design concepts", domain: "CD" },
-      { value: "E", label: "Building working solutions", domain: "ED" },
-      { value: "F", label: "Shaping market trends", domain: "MC" }
+      { value: "A", label: "Solving difficult computer or technical problems", domain: "TC" },
+      { value: "B", label: "Making businesses grow and become more successful", domain: "BM" },
+      { value: "C", label: "Helping patients get better and feel well", domain: "HS" },
+      { value: "D", label: "Creating new designs and beautiful things", domain: "CD" },
+      { value: "E", label: "Building systems and making things work better", domain: "ED" },
+      { value: "F", label: "Influencing people and changing market trends", domain: "MC" }
     ]
   },
   {
     id: 4,
-    text: "In team settings, you naturally:",
+    text: "When working in a team, what do you naturally do? (Your automatic role in group work)",
     options: [
-      { value: "A", label: "Find system weaknesses", domain: "TC" },
-      { value: "B", label: "Guide team priorities", domain: "BM" },
-      { value: "C", label: "Foster collaboration", domain: "HS" },
-      { value: "D", label: "Drive creative vision", domain: "CD" },
-      { value: "E", label: "Design solutions", domain: "ED" },
-      { value: "F", label: "Craft compelling stories", domain: "MC" }
+      { value: "A", label: "Find problems in systems and point out what's wrong", domain: "TC" },
+      { value: "B", label: "Help the team decide what's most important to do first", domain: "BM" },
+      { value: "C", label: "Make sure everyone works well together", domain: "HS" },
+      { value: "D", label: "Come up with creative ideas and new ways to do things", domain: "CD" },
+      { value: "E", label: "Design practical solutions that actually work", domain: "ED" },
+      { value: "F", label: "Tell stories and convince people about ideas", domain: "MC" }
     ]
   },
   {
     id: 5,
-    text: "You excel at handling:",
+    text: "What are you naturally good at handling? (Your strongest skill area)",
     options: [
-      { value: "A", label: "Complex technical puzzles", domain: "TC" },
-      { value: "B", label: "Making key decisions", domain: "BM" },
-      { value: "C", label: "People's wellbeing needs", domain: "HS" },
-      { value: "D", label: "Pushing creative limits", domain: "CD" },
-      { value: "E", label: "Developing systems and structures", domain: "ED" },
-      { value: "F", label: "Analyzing trend shifts and changes", domain: "MC" }
+      { value: "A", label: "Complex technical puzzles that need deep thinking", domain: "TC" },
+      { value: "B", label: "Making important decisions for groups or organizations", domain: "BM" },
+      { value: "C", label: "Taking care of people's health and well-being", domain: "HS" },
+      { value: "D", label: "Pushing creative limits and trying new artistic ideas", domain: "CD" },
+      { value: "E", label: "Building systems and structures that last long", domain: "ED" },
+      { value: "F", label: "Understanding trends and how people's opinions change", domain: "MC" }
     ]
   }
 ];
@@ -91,6 +91,7 @@ export default function CareerQuizSection1({ onNext }: CareerQuizSection1Props) 
 
   const handleNext = () => {
     if (allQuestionsAnswered && onNext) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       onNext(answers);
     }
   };
@@ -166,8 +167,8 @@ export default function CareerQuizSection1({ onNext }: CareerQuizSection1Props) 
       {/* Instructions */}
       <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
         <p className="text-sm text-blue-800">
-          <strong>Instructions:</strong> Select the option that best describes your work style and preferences. 
-          There are no right or wrong answers - choose what feels most natural to you.
+          <strong>How to answer:</strong> Choose the option that feels most natural to you. 
+          There are no right or wrong answers - pick what describes you best at work or school.
         </p>
       </div>
     </div>

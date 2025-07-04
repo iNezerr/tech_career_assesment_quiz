@@ -13,62 +13,62 @@ interface Question {
 const questions: Question[] = [
   {
     id: 6,
-    text: "Your strongest natural abilities are:",
+    text: "What are you naturally best at? (Your strongest natural ability)",
     options: [
-      { value: "A", label: "Mathematical and logical thinking", domain: "TC" },
-      { value: "B", label: "Strategic planning and analysis", domain: "BM" },
-      { value: "C", label: "Understanding people's needs", domain: "HS" },
-      { value: "D", label: "Visual and creative expression", domain: "CD" },
-      { value: "E", label: "Technical problem-solving", domain: "ED" },
-      { value: "F", label: "Communication and persuasion", domain: "MC" }
+      { value: "A", label: "Math and logical thinking - solving problems step by step", domain: "TC" },
+      { value: "B", label: "Planning and analyzing - making good business plans", domain: "BM" },
+      { value: "C", label: "Understanding people's feelings and what they need", domain: "HS" },
+      { value: "D", label: "Visual and creative expression - drawing, designing, art", domain: "CD" },
+      { value: "E", label: "Technical problem-solving - fixing things that are broken", domain: "ED" },
+      { value: "F", label: "Communication and convincing people to agree with you", domain: "MC" }
     ]
   },
   {
     id: 7,
-    text: "When analyzing information, you excel at:",
+    text: "When you study information or data, what do you do best? (How you understand information)",
     options: [
-      { value: "A", label: "Finding patterns in data", domain: "TC" },
-      { value: "B", label: "Connecting market signals and ROI potential", domain: "BM" },
-      { value: "C", label: "Recognizing care patterns", domain: "HS" },
-      { value: "D", label: "Visualizing user flows", domain: "CD" },
-      { value: "E", label: "Detecting technical issues", domain: "ED" },
-      { value: "F", label: "Understanding consumer behavior signals", domain: "MC" }
+      { value: "A", label: "Finding patterns in numbers and data", domain: "TC" },
+      { value: "B", label: "Understanding market trends and business opportunities", domain: "BM" },
+      { value: "C", label: "Recognizing patterns in how to care for people", domain: "HS" },
+      { value: "D", label: "Seeing how users will move through websites or apps", domain: "CD" },
+      { value: "E", label: "Spotting technical problems in systems", domain: "ED" },
+      { value: "F", label: "Understanding why people buy things or change opinions", domain: "MC" }
     ]
   },
   {
     id: 8,
-    text: "Your approach to learning new skills is:",
+    text: "How do you like to learn new skills? (Your preferred way of learning)",
     options: [
-      { value: "A", label: "Deep technical immersion", domain: "TC" },
-      { value: "B", label: "Business scenario analysis", domain: "BM" },
-      { value: "C", label: "Through practice scenarios", domain: "HS" },
-      { value: "D", label: "By experimenting creatively", domain: "CD" },
-      { value: "E", label: "Through technical documentation", domain: "ED" },
-      { value: "F", label: "Industry trend research", domain: "MC" }
+      { value: "A", label: "Deep technical study - learning everything about technology", domain: "TC" },
+      { value: "B", label: "Business case studies - learning from real business examples", domain: "BM" },
+      { value: "C", label: "Practice scenarios - learning by doing real situations", domain: "HS" },
+      { value: "D", label: "Creative experiments - trying new artistic techniques", domain: "CD" },
+      { value: "E", label: "Reading technical manuals and following instructions", domain: "ED" },
+      { value: "F", label: "Studying industry trends and what's popular now", domain: "MC" }
     ]
   },
   {
     id: 9,
-    text: "In challenging situations, you typically:",
+    text: "When facing difficult situations, what do you usually do? (Your natural response to challenges)",
     options: [
-      { value: "A", label: "Troubleshoot systematically", domain: "TC" },
-      { value: "B", label: "Assess risks and opportunities", domain: "BM" },
-      { value: "C", label: "Focus on people's wellbeing", domain: "HS" },
-      { value: "D", label: "Try different approaches", domain: "CD" },
-      { value: "E", label: "Build step-by-step solutions", domain: "ED" },
-      { value: "F", label: "Find consensus and alignment", domain: "MC" }
+      { value: "A", label: "Troubleshoot step by step - find and fix problems systematically", domain: "TC" },
+      { value: "B", label: "Think about risks and opportunities before deciding", domain: "BM" },
+      { value: "C", label: "Focus on people's wellbeing and how they feel", domain: "HS" },
+      { value: "D", label: "Try different creative approaches until something works", domain: "CD" },
+      { value: "E", label: "Build solutions step by step following a plan", domain: "ED" },
+      { value: "F", label: "Find agreement and get everyone to work together", domain: "MC" }
     ]
   },
   {
     id: 10,
-    text: "Your problem-solving strength is:",
+    text: "What is your strongest problem-solving skill? (How you solve problems best)",
     options: [
-      { value: "A", label: "Test hypotheses and isolate issues", domain: "TC" },
-      { value: "B", label: "Model scenarios and calculate risks", domain: "BM" },
-      { value: "C", label: "Balance patient and staff needs", domain: "HS" },
-      { value: "D", label: "Push boundaries and explore edges", domain: "CD" },
-      { value: "E", label: "Design systems and scale processes", domain: "ED" },
-      { value: "F", label: "Study behaviors and drive actions", domain: "MC" }
+      { value: "A", label: "Testing ideas and isolating issues - like a scientist", domain: "TC" },
+      { value: "B", label: "Creating different scenarios and calculating risks", domain: "BM" },
+      { value: "C", label: "Balancing patient needs with staff needs fairly", domain: "HS" },
+      { value: "D", label: "Pushing boundaries and exploring new creative edges", domain: "CD" },
+      { value: "E", label: "Designing systems that can grow and handle more work", domain: "ED" },
+      { value: "F", label: "Studying people's behavior and motivating them to act", domain: "MC" }
     ]
   }
 ];
@@ -92,12 +92,14 @@ export default function CareerQuizSection2({ onNext, onBack }: CareerQuizSection
 
   const handleNext = () => {
     if (allQuestionsAnswered && onNext) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       onNext(answers);
     }
   };
 
   const handleBack = () => {
     if (onBack) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       onBack();
     }
   };
@@ -182,8 +184,8 @@ export default function CareerQuizSection2({ onNext, onBack }: CareerQuizSection
       {/* Instructions */}
       <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
         <p className="text-sm text-blue-800">
-          <strong>Section 2 Focus:</strong> These questions assess your natural abilities and how you approach learning and problem-solving. 
-          Select the option that best reflects your strongest natural tendencies and preferred methods.
+          <strong>About this section:</strong> These questions are about your natural abilities and how you like to learn and solve problems. 
+          Choose what feels most true about how you naturally think and work.
         </p>
       </div>
     </div>

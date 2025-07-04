@@ -13,62 +13,62 @@ interface Question {
 const questions: Question[] = [
   {
     id: 16,
-    text: "You feel most accomplished when:",
+    text: "When do you feel most proud and accomplished? (What makes you feel successful)",
     options: [
-      { value: "A", label: "Cracking tough code", domain: "TC" },
-      { value: "B", label: "Exceeding growth targets", domain: "BM" },
-      { value: "C", label: "Advancing patient care", domain: "HS" },
-      { value: "D", label: "Creating something unique", domain: "CD" },
-      { value: "E", label: "Building functional solutions", domain: "ED" },
-      { value: "F", label: "Driving decisions", domain: "MC" }
+      { value: "A", label: "When I solve difficult computer or technical problems", domain: "TC" },
+      { value: "B", label: "When I help a business grow and reach its goals", domain: "BM" },
+      { value: "C", label: "When I help patients get better and improve their health", domain: "HS" },
+      { value: "D", label: "When I create something unique and beautiful", domain: "CD" },
+      { value: "E", label: "When I build something that works well and lasts long", domain: "ED" },
+      { value: "F", label: "When I influence people and help them make decisions", domain: "MC" }
     ]
   },
   {
     id: 17,
-    text: "Your work motivation comes from:",
+    text: "What motivates you to work hard? (What drives you to do your best)",
     options: [
-      { value: "A", label: "Solving complex problems", domain: "TC" },
-      { value: "B", label: "Achieving ambitious goals", domain: "BM" },
-      { value: "C", label: "Making people's lives better", domain: "HS" },
-      { value: "D", label: "Creative freedom", domain: "CD" },
-      { value: "E", label: "System innovation", domain: "ED" },
-      { value: "F", label: "Market impact", domain: "MC" }
+      { value: "A", label: "Solving complex problems that challenge my mind", domain: "TC" },
+      { value: "B", label: "Achieving big goals and being successful in business", domain: "BM" },
+      { value: "C", label: "Making people's lives better and healthier", domain: "HS" },
+      { value: "D", label: "Having freedom to be creative and express myself", domain: "CD" },
+      { value: "E", label: "Creating new systems and innovations that help society", domain: "ED" },
+      { value: "F", label: "Having impact on markets and influencing many people", domain: "MC" }
     ]
   },
   {
     id: 18,
-    text: "You value work that:",
+    text: "What kind of work do you value most? (What type of work feels meaningful to you)",
     options: [
-      { value: "A", label: "Pushes technical boundaries", domain: "TC" },
-      { value: "B", label: "Drives organizational change", domain: "BM" },
-      { value: "C", label: "Strengthens community health", domain: "HS" },
-      { value: "D", label: "Redefines possible", domain: "CD" },
-      { value: "E", label: "Creates solid foundations", domain: "ED" },
-      { value: "F", label: "Shapes outcomes", domain: "MC" }
+      { value: "A", label: "Work that pushes technology forward and breaks new ground", domain: "TC" },
+      { value: "B", label: "Work that drives change in organizations and business", domain: "BM" },
+      { value: "C", label: "Work that strengthens community health and helps people", domain: "HS" },
+      { value: "D", label: "Work that redefines what's possible and creates new things", domain: "CD" },
+      { value: "E", label: "Work that creates solid foundations for the future", domain: "ED" },
+      { value: "F", label: "Work that shapes outcomes and influences how things turn out", domain: "MC" }
     ]
   },
   {
     id: 19,
-    text: "Your ideal project would involve:",
+    text: "What would your ideal project look like? (Your dream work project)",
     options: [
-      { value: "A", label: "Building innovative systems", domain: "TC" },
-      { value: "B", label: "Scale successful ventures", domain: "BM" },
-      { value: "C", label: "Transforming patient experience", domain: "HS" },
-      { value: "D", label: "Designing breakthrough concepts", domain: "CD" },
-      { value: "E", label: "Crafting pivotal solutions", domain: "ED" },
-      { value: "F", label: "Shaping popular narratives", domain: "MC" }
+      { value: "A", label: "Building new innovative computer systems or software", domain: "TC" },
+      { value: "B", label: "Helping successful businesses grow even bigger", domain: "BM" },
+      { value: "C", label: "Transforming how patients experience healthcare", domain: "HS" },
+      { value: "D", label: "Designing breakthrough concepts that change everything", domain: "CD" },
+      { value: "E", label: "Creating important solutions that solve major problems", domain: "ED" },
+      { value: "F", label: "Shaping popular stories and influencing public opinion", domain: "MC" }
     ]
   },
   {
     id: 20,
-    text: "Success to you means:",
+    text: "What does success mean to you? (How you define a successful life)",
     options: [
-      { value: "A", label: "Finding elegant solutions", domain: "TC" },
-      { value: "B", label: "Delivering measurable results", domain: "BM" },
-      { value: "C", label: "Improving quality of life", domain: "HS" },
-      { value: "D", label: "Making lasting impact", domain: "CD" },
-      { value: "E", label: "Building something that lasts", domain: "ED" },
-      { value: "F", label: "Moving people to action", domain: "MC" }
+      { value: "A", label: "Finding elegant solutions to difficult technical problems", domain: "TC" },
+      { value: "B", label: "Delivering measurable results and achieving clear goals", domain: "BM" },
+      { value: "C", label: "Improving quality of life for many people", domain: "HS" },
+      { value: "D", label: "Making lasting impact through creative work", domain: "CD" },
+      { value: "E", label: "Building something important that lasts for generations", domain: "ED" },
+      { value: "F", label: "Moving people to action and changing their behavior", domain: "MC" }
     ]
   }
 ];
@@ -92,12 +92,14 @@ export default function CareerQuizSection4({ onSubmit, onBack }: CareerQuizSecti
 
   const handleSubmit = () => {
     if (allQuestionsAnswered && onSubmit) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       onSubmit(answers);
     }
   };
 
   const handleBack = () => {
     if (onBack) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       onBack();
     }
   };
@@ -182,8 +184,8 @@ export default function CareerQuizSection4({ onSubmit, onBack }: CareerQuizSecti
       {/* Instructions */}
       <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
         <p className="text-sm text-blue-800">
-          <strong>Final Section:</strong> These questions explore your core values and what motivates you at work. 
-          Select the options that resonate most deeply with your personal values and aspirations.
+          <strong>Final section:</strong> These questions are about your values and what motivates you at work. 
+          Choose the options that match what you really care about and what makes you feel fulfilled.
         </p>
       </div>
 
@@ -198,7 +200,7 @@ export default function CareerQuizSection4({ onSubmit, onBack }: CareerQuizSecti
             </div>
             <div className="ml-3">
               <p className="text-sm text-green-800">
-                <strong>Assessment Complete!</strong> You've answered all 20 questions. Click "Submit Assessment" to see your personalized career recommendations.
+                <strong>Assessment Complete!</strong> You've answered all 20 questions. Click "Submit Assessment" to see your career recommendations based on your answers.
               </p>
             </div>
           </div>
