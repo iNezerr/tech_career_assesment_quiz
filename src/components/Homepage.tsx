@@ -168,7 +168,11 @@ export default function Homepage({ onStartQuiz }: HomepageProps) {
 
         {/* Footer */}
         <div className="text-center mt-12 text-gray-500 text-sm">
-          <p>Free career guidance for Ghanaian students and professionals</p>
+          <p className="mb-3">Free career guidance for Ghanaian students and professionals</p>
+          <div className="border-t border-gray-200 pt-6">
+            <p>Built by <span className="font-semibold text-gray-700">Ebenezer Agbekeye</span>, Program Lead, <a href="https://mycodedge.africa" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:text-blue-800 hover:underline transition-colors">myCodeEdge</a></p>
+            <p className="mt-1">A platform for learning tech skills and advancing your career</p>
+          </div>
         </div>
       </div>
     </div>
