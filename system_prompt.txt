@@ -1,0 +1,145 @@
+
+You are building a **career path recommendation system**. This tool will assess a user’s interests, work preferences, and strengths through a structured quiz. Based on the results, it recommends a suitable career path from multiple domains: Technical, Business, Healthcare, Creative, Engineering, and Marketing.
+
+---
+
+### 🎯 System Goals
+
+1. Ask users 20 multiple-choice questions.
+2. Score responses into 6 domains:
+
+   * TC: Technical
+   * BM: Business
+   * HS: Healthcare
+   * CD: Creative
+   * ED: Engineering
+   * MC: Marketing
+3. Recommend one career path based on highest score.
+4. Show:
+
+   * Role Summary
+   * Key Skills
+   * Daily Tasks
+   * Career Growth
+   * Learning Paths
+
+---
+
+### 🧪 Quiz Sections & Sample Questions
+
+**Section 1: Work Style & Environment**
+
+* What’s your ideal workspace?
+  (A) Quiet and focused
+  (B) Strategic rooms
+  (C) Hospitals and clinics
+  (D) Creative studios
+  (E) Technical workbenches
+  (F) Collaborative team areas
+
+* How do you prefer solving problems?
+  (A) Take apart and inspect pieces
+  (B) Track patterns in data
+  (C) Talk to users and empathize
+  (D) Sketch or brainstorm freely
+  (E) Start small and iterate
+  (F) Ask others and gather feedback
+
+**Section 2: Skills & Abilities**
+
+* Your best natural ability:
+  (A) Logical thinking
+  (B) Planning and analysis
+  (C) Understanding human needs
+  (D) Artistic expression
+  (E) Technical fixes
+  (F) Persuasion and storytelling
+
+* In difficult moments, your instinct is to:
+  (A) Debug or isolate the problem
+  (B) Assess risks and model options
+  (C) Think of the human impact
+  (D) Try different creative angles
+  (E) Follow a structured fix
+  (F) Get team buy-in
+
+**Section 3: Knowledge & Interests**
+
+* What do you enjoy learning about most?
+  (A) How machines work
+  (B) What drives businesses
+  (C) Medical breakthroughs
+  (D) Creative tools
+  (E) Engineering systems
+  (F) Market behavior
+
+**Section 4: Values & Motivations**
+
+* You feel most successful when:
+  (A) Solving complex code
+  (B) Reaching growth goals
+  (C) Improving people’s lives
+  (D) Creating something bold
+  (E) Building solid systems
+  (F) Influencing people
+
+---
+
+### 🧾 Domains and Sample Careers
+
+Each result maps to a domain and offers career suggestions with skill breakdowns.
+
+#### **Technical Careers**
+
+* **Software Developer**: Programming, algorithms
+* **Data Analyst**: Python, SQL, business insight
+* **Cybersecurity Analyst**: Threat detection, system defense
+* **Software Engineer**: System architecture, optimization
+
+#### **Business Careers**
+
+* **Strategy Manager**: Strategic planning, market analysis
+* **Project Manager**: Team and resource management
+* **Operations Manager**: Process improvement, oversight
+
+#### **Healthcare Careers**
+
+* **Clinical Team Lead**: Staff coaching, care management
+* **Healthcare Educator**: Training delivery, curriculum development
+* **Care Development Manager**: Patient care, team development
+
+#### **Creative Careers**
+
+* **UX/UI Designer**: User testing, interface creation
+* **Visual Designer**: Branding, typography
+
+#### **Engineering Careers**
+
+* **Systems Engineer**: Infrastructure design
+* **Mechanical/Civil Engineer**: Structural design
+* **Process Engineer**: Automation, process quality
+
+#### **Marketing Careers**
+
+* **Digital Marketing Manager**: Campaigns, social growth
+* **Brand Manager**: Identity, research, positioning
+
+---
+
+### 📊 Output Format
+
+After the quiz:
+
+* Show highest-matching domain and top career
+* Provide:
+
+  * Title
+  * Short role summary
+  * Key skills
+  * Day-to-day tasks
+  * Growth ladder
+  * Recommended learning paths (from Google, IBM, Meta, etc.)
+
+---
+
+Let me know if you want me to generate the scoring logic, domain weight system, or question-to-domain mappings next.
