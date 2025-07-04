@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Homepage from './components/Homepage'
 import CareerQuizSection1 from './components/CareerQuizSection1'
 import CareerQuizSection2 from './components/CareerQuizSection2'
 import CareerQuizSection3 from './components/CareerQuizSection3'
@@ -25,10 +26,17 @@ const initialScores: DomainScores = {
 };
 
 function App() {
+  const [currentView, setCurrentView] = useState<'homepage' | 'quiz' | 'results'>('homepage');
   const [currentSection, setCurrentSection] = useState(1);
   const [allAnswers, setAllAnswers] = useState<Record<number, string>>({});
-  const [isComplete, setIsComplete] = useState(false);
   const [finalScores, setFinalScores] = useState<DomainScores>(initialScores);
+
+  const startQuiz = () => {
+    setCurrentView('quiz');
+    setCurrentSection(1);
+    setAllAnswers({});
+    setFinalScores(initialScores);
+  };
 
   const handleSection1Complete = (answers: Record<number, string>) => {
     console.log('Section 1 answers:', answers);
@@ -77,13 +85,13 @@ function App() {
     console.log('Top Domain:', topDomain[0], 'with score:', topDomain[1]);
     
     setFinalScores(scores);
-    setIsComplete(true);
+    setCurrentView('results');
   };
 
   const resetQuiz = () => {
+    setCurrentView('homepage');
     setCurrentSection(1);
     setAllAnswers({});
-    setIsComplete(false);
     setFinalScores(initialScores);
   };
 
@@ -91,10 +99,17 @@ function App() {
   const handleBackToSection2 = () => setCurrentSection(2);
   const handleBackToSection3 = () => setCurrentSection(3);
 
-  if (isComplete) {
+  // Homepage
+  if (currentView === 'homepage') {
+    return <Homepage onStartQuiz={startQuiz} />;
+  }
+
+  // Results page
+  if (currentView === 'results') {
     return <QuizResults scores={finalScores} resetQuiz={resetQuiz} />;
   }
 
+  // Quiz sections
   return (
     <div className="min-h-screen bg-gray-100 py-8">
       {currentSection === 1 && (
